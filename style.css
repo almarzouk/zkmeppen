@@ -1,0 +1,554 @@
+/*
+Theme Name: ZKM Theme
+Author: Jumaa Almarzouk
+Author URI: http://eilinghoff.de
+Description: Ein individuelles WordPress-Theme für ZKM.
+Version: 1.0
+Tags: architecture, modern, minimal, responsive
+*/
+
+.header {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  transition: top 0.3s ease-in-out; /* حركة ناعمة */
+  z-index: 998;
+}
+
+.header.hidden {
+  top: -50px; /* تخفي الـ header للأعلى */
+}
+.header .top__nav {
+  background-color: var(--bg-gray);
+
+  padding-block: 15px;
+}
+.header .top__nav .top__nav__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.header .top__nav .top__nav__list .top__nav__link {
+  color: var(--gray-color);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.header .top__nav .top__nav__list .top__nav__link:hover {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+/* Navigation */
+/* Burger Menu */
+.burger {
+  width: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  position: relative;
+  z-index: 1000;
+}
+
+.burger span {
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: 0.3s ease;
+}
+
+/* Burger animation to X */
+.burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+.logo img {
+  max-width: 80px;
+}
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 15px;
+}
+.nav .nav__list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--primary-color) !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  transition: all 0.3s ease;
+  transform: translateY(-130%);
+  opacity: 0;
+  pointer-events: none;
+  pointer-events: auto;
+  z-index: 999;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+.nav .nav__list.active {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav .nav__list .nav__link {
+  color: white;
+  font-size: 20px;
+  transition: all 0.3s ease;
+  font-weight: 400;
+  position: relative;
+}
+.nav .nav__list .nav__link::after {
+  transition: all 0.3s ease;
+  position: absolute;
+  background-color: white;
+  width: 0;
+  height: 2px;
+  content: "";
+  left: 0;
+  bottom: -10px;
+}
+
+.nav .nav__list .nav__link:hover::after {
+  transition: all 0.3s ease;
+  width: 100%;
+}
+/* Navigation */
+
+/* Start Seite */
+/* Hero */
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 200px;
+}
+.hero .container .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  gap: 30px;
+}
+.hero .container .left .buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+/* Gebet Section */
+.gebet {
+  background-color: var(--primary-color);
+}
+.gebet .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.gebet .prayer-times-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.gebet .next-gebet td {
+  background-color: #2c7a7b !important;
+  color: #fff !important;
+}
+.gebet .prayer-times-table th,
+.gebet .prayer-times-table td {
+  padding: 20px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--secondary-color);
+  text-align: center;
+  width: 50%;
+}
+
+.gebet .prayer-times-table .start-table {
+  border-top-left-radius: 10px;
+}
+.gebet .prayer-times-table .start-table-zeit {
+  border-top-right-radius: 10px;
+}
+.gebet .prayer-times-table .end-table {
+  border-bottom-left-radius: 10px;
+}
+.gebet .prayer-times-table .end-table-zeit {
+  border-bottom-right-radius: 10px;
+}
+.gebet .prayer-times-table tr {
+  background-color: #f3f3f3;
+}
+.gebet .prayer-times-table tr:last-child td {
+  border-bottom: none;
+}
+.gebet .gebet-info {
+  display: flex;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.gebet .gebet-info li {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+}
+.gebet .right {
+  order: -2;
+}
+.gebet img {
+  border-radius: 10px;
+}
+/* Uber uns */
+.uberuns .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-block: 50px;
+}
+.uberuns .card .number {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uberuns .card .number span {
+  font-size: 60px;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 100;
+  color: #fff;
+}
+.uberuns .card-1 {
+  background-color: var(--yellow-color);
+}
+.uberuns .card-1 .number {
+  background-color: var(--yellow-color-dark);
+}
+.uberuns .card-2 {
+  background-color: var(--green-color);
+}
+.uberuns .card-2 .number {
+  background-color: var(--green-color-dark);
+}
+.uberuns .card-3 {
+  background-color: var(--orange-color);
+}
+.uberuns .card-3 .number {
+  background-color: var(--orange-color-dark);
+}
+.uberuns .text {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.uberuns .container {
+  display: flex;
+  flex-direction: column;
+}
+/* Warum Spenden */
+.warum {
+  background-color: var(--bg-gray);
+}
+.warum .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.warum .container .right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/* Leistungen */
+.leistungen .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.leistungen .buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.leistungen .cards {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 30px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.leistungen .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  border-radius: 40px;
+  padding-block: 60px;
+}
+.leistungen .card-1 {
+  background-color: var(--yellow-color);
+}
+.leistungen .card-2 {
+  background-color: var(--gray-color-light);
+}
+.leistungen .card-3 {
+  background-color: var(--orange-color);
+}
+.leistungen .card-4 {
+  background-color: var(--green-color);
+}
+.leistungen img {
+  max-width: 100px;
+}
+/* Kommende */
+.kommende {
+  background-color: var(--gray-color-light);
+}
+.kommende .container .cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.kommende .container .cards .card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+}
+.kommende img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Footer */
+.footer .container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+.footer .footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: stretch;
+  justify-content: space-between;
+}
+.footer li,
+.footer a {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+.footer a:hover {
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+.min-footer {
+  background-color: var(--secondary-color);
+  padding-block: 20px;
+}
+.min-footer .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.min-footer .container ul div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.min-footer li,
+.min-footer p,
+.min-footer a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 200;
+}
+/* Start Seite */
+/* Responsive Breakpoints - Mobile First */
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .gebet .gebet-info {
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  .gebet .gebet-info li {
+    font-size: 24px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .leistungen .cards .card {
+    width: 300px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .footer .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Extra Large devices (1200px and up) */
+@media (min-width: 1200px) {
+  /* Show menu and Disable the Burger */
+  .burger {
+    display: none;
+  }
+  .nav .nav__list {
+    position: relative;
+    top: 0;
+    background-color: transparent !important;
+    color: red;
+    z-index: 12;
+    width: auto;
+    left: 0;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .nav .nav__list .nav__link {
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    font-weight: 300;
+  }
+  .hero .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .hero .container .right,
+  .hero .container .left {
+    flex: 1;
+  }
+  .gebet .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .gebet .right {
+    order: 1;
+  }
+  .gebet .right,
+  .gebet .left {
+    flex: 1;
+  }
+  .gebet img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .uberuns .container {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .uberuns .card {
+    flex: 1;
+    padding-inline: 40px;
+  }
+  .warum .container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+  }
+  .warum .container .right,
+  .warum .container .left {
+    flex: 1;
+  }
+  .warum .container .right {
+    justify-content: space-between;
+  }
+  .leistungen .container {
+    gap: 60px;
+    align-items: start;
+  }
+  .leistungen .cards {
+    align-items: center;
+    gap: 30px;
+  }
+  .leistungen img {
+    max-width: 150px;
+  }
+  .kommende {
+    background-color: var(--gray-color-light);
+  }
+  .kommende .container .cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Extra Extra Large devices (1440px and up) */
+@media (min-width: 1440px) {
+  .footer .container {
+    grid-template-columns: 1fr 400px 200px;
+    gap: 60px;
+  }
+  .leistungen .cards {
+    gap: 80px;
+  }
+}
+
+/* 4K screens (1920px and up) */
+@media (min-width: 1920px) {
+  .leistungen .cards {
+    gap: 100px;
+  }
+}
