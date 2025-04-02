@@ -33,3 +33,28 @@ window.addEventListener("scroll", () => {
 
   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".tap");
+  const sectionSatzung = document.getElementById("satzung");
+  const sectionVorstand = document.getElementById("vorstand");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.getAttribute("data-target");
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      if (target === "satzung") {
+        sectionSatzung.style.display = "block";
+        sectionVorstand.style.display = "none";
+      } else if (target === "vorstand") {
+        sectionSatzung.style.display = "none";
+        sectionVorstand.style.display = "block";
+      }
+    });
+  });
+
+  // الوضع الافتراضي
+  sectionSatzung.style.display = "block";
+  sectionVorstand.style.display = "none";
+});

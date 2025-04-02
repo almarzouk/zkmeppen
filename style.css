@@ -8,18 +8,18 @@ Tags: architecture, modern, minimal, responsive
 */
 
 .header {
-  background-color: var(--primary-color);
-  color: white;
+  background-color: #fff;
   text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
-  transition: top 0.3s ease-in-out; /* حركة ناعمة */
+  transition: top 0.3s ease-in-out;
   z-index: 998;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل من الأسفل فقط */
 }
 
 .header.hidden {
-  top: -50px; /* تخفي الـ header للأعلى */
+  top: -50px;
 }
 .header .top__nav {
   background-color: var(--bg-gray);
@@ -57,7 +57,7 @@ Tags: architecture, modern, minimal, responsive
 
 .burger span {
   height: 3px;
-  background-color: white;
+  background-color: #707070;
   border-radius: 2px;
   transition: 0.3s ease;
 }
@@ -111,7 +111,7 @@ body.no-scroll {
   pointer-events: auto;
 }
 .nav .nav__list .nav__link {
-  color: white;
+  color: var(--primary-color);
   font-size: 20px;
   transition: all 0.3s ease;
   font-weight: 400;
@@ -120,7 +120,7 @@ body.no-scroll {
 .nav .nav__list .nav__link::after {
   transition: all 0.3s ease;
   position: absolute;
-  background-color: white;
+  background-color: var(--primary-color);
   width: 0;
   height: 2px;
   content: "";
@@ -411,6 +411,84 @@ body.no-scroll {
   font-weight: 200;
 }
 /* Start Seite */
+/* Verein Seite */
+.satzung {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.taps-container {
+  background-color: #f2f2f2;
+  max-width: max-content;
+  padding-inline: 40px;
+  padding-block: 20px;
+  display: flex;
+  gap: 30px;
+  border-radius: 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.taps-container .tap {
+  color: var(--secondary-color);
+  height: 50px;
+  width: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.taps-container .tap.active,
+.taps-container .tap:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.vorstand .cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 30px;
+}
+.vorstand .cards .img {
+  border-radius: 10px;
+}
+.unterstutzen .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.unterstutzen .cards .card {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 50px;
+  width: 100%;
+}
+.unterstutzen .cards .card .nummer {
+  font-family: "Winky Sans", sans-serif;
+  font-size: 60px;
+  font-weight: 100;
+  color: #fff;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow-color-dark);
+}
+.unterstutzen .cards .card .card-title {
+  font-size: 48px;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 500;
+}
 /* Responsive Breakpoints - Mobile First */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -429,6 +507,12 @@ body.no-scroll {
   .leistungen .cards .card {
     width: 300px;
   }
+  .vorstand .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 30px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -440,6 +524,13 @@ body.no-scroll {
 
 /* Extra Large devices (1200px and up) */
 @media (min-width: 1200px) {
+  .vorstand .cards {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+  }
+  .vorstand .cards .card:nth-child(odd) {
+    margin-top: 50px;
+  }
   /* Show menu and Disable the Burger */
   .burger {
     display: none;
@@ -464,10 +555,8 @@ body.no-scroll {
     pointer-events: auto;
   }
   .nav .nav__list .nav__link {
-    color: white;
     font-size: 20px;
     transition: all 0.3s ease;
-    font-weight: 300;
   }
   .hero .container {
     flex-direction: row;
@@ -532,6 +621,13 @@ body.no-scroll {
     gap: 30px;
     flex-wrap: nowrap;
     justify-content: space-between;
+  }
+  .unterstutzen .cards {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: stretch;
+    justify-content: center;
   }
 }
 

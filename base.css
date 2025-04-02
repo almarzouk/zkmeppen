@@ -213,8 +213,77 @@ button {
 .white {
   color: white;
 }
-
+.yellow-dark {
+  color: var(--yellow-color-dark);
+}
+.yellow {
+  color: var(--yellow-color);
+}
+.orange {
+  color: var(--orange-color);
+}
+.orange-dark {
+  color: var(--orange-color-dark);
+}
+.green-light {
+  color: var(--green-color);
+}
+.green-dark {
+  color: var(--green-color-dark);
+}
+/* Backgrounds */
+.bg-yellow {
+  background-color: var(--yellow-color);
+}
+.bg-yellow-dark {
+  background-color: var(--yellow-color-dark);
+}
+.bg-green {
+  background-color: var(--green-color);
+}
+.bg-green-dark {
+  background-color: var(--green-color-dark);
+}
+.bg-green-light {
+  background-color: var(--green-color-light);
+}
+.bg-orange {
+  background-color: var(--orange-color);
+}
+.bg-orange-dark {
+  background-color: var(--orange-color-dark);
+}
+.bg-gray {
+  background-color: var(--gray-color-light);
+}
+.bg-gray-dark {
+  background-color: var(--gray-color);
+}
+.bg-primary {
+  background-color: var(--primary-color);
+}
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+.bg-white {
+  background-color: white;
+}
+.bg-white-light {
+  background-color: #f8f8f8;
+}
+.bg-white-dark {
+  background-color: #e8e8e8;
+}
+.bg-white-light-2 {
+  background-color: #f2f2f2;
+}
+.bg-green-custom {
+  background-color: #e8f5f1;
+}
 /* Margins */
+.mb-30-60 {
+  margin-bottom: 30px;
+}
 .mt-0 {
   margin-top: 0 !important;
 }
@@ -456,6 +525,9 @@ button {
 @media (min-width: 1200px) {
   .container {
     max-width: 1140px;
+  }
+  .mb-30-60 {
+    margin-bottom: 60px;
   }
 }
 
