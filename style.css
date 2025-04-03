@@ -509,6 +509,11 @@ body.no-scroll {
   font-family: "Winky Sans", sans-serif;
   font-weight: 400;
 }
+.nav__link.active {
+  color: #0f6c7d; /* اختر لونًا مميزًا */
+  font-weight: bold;
+  border-bottom: 2px solid #0f6c7d;
+}
 /* Responsive Breakpoints - Mobile First */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

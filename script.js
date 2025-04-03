@@ -58,3 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
   sectionSatzung.style.display = "block";
   sectionVorstand.style.display = "none";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".nav__link");
+  const currentUrl = window.location.pathname;
+
+  links.forEach((link) => {
+    const linkUrl = new URL(link.href);
+    const linkPath = linkUrl.pathname;
+
+    if (currentUrl.endsWith(linkPath)) {
+      link.classList.add("active");
+    }
+  });
+});
