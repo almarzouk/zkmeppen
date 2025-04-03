@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const links = document.querySelectorAll(".nav__link");
   const currentUrl = window.location.pathname;
 
+  // تعيين الكلاس "active" للرابط المطابق عند تحميل الصفحة
   links.forEach((link) => {
     const linkUrl = new URL(link.href);
     const linkPath = linkUrl.pathname;
@@ -70,5 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (currentUrl.endsWith(linkPath)) {
       link.classList.add("active");
     }
+
+    // عند النقر على أي رابط، احذف "active" من الكل وأضفها فقط لهذا الرابط
+    link.addEventListener("click", function () {
+      links.forEach((l) => l.classList.remove("active"));
+      this.classList.add("active");
+    });
   });
 });
