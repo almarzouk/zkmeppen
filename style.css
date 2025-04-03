@@ -504,6 +504,11 @@ body.no-scroll {
   font-family: "Winky Sans", sans-serif;
   font-weight: 500;
 }
+.wochen .cards .card .card-title {
+  font-size: 35px;
+  font-family: "Winky Sans", sans-serif;
+  font-weight: 400;
+}
 /* Responsive Breakpoints - Mobile First */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

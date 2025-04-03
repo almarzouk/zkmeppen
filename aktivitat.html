@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./imgs/logo.png" type="image/x-icon" />
+
+    <title>ZKM Meppen</title>
+  </head>
+  <style>
+    .next {
+      background-color: #f8f8f8;
+    }
+    .next .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 20px;
+    }
+
+    .tabs {
+      width: 230px;
+    }
+
+    .tab {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .tab.active {
+      background-color: #0b5540;
+      color: white;
+    }
+
+    .tab.active .calendar-icon {
+      background-color: white;
+      color: #0b5540;
+    }
+
+    .calendar img {
+      min-width: 30px;
+    }
+
+    .content {
+      flex-grow: 1;
+      background-color: white;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .time {
+      display: inline-block;
+      background-color: #e8f5e9;
+      color: #388e3c;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+  </style>
+  <body>
+    <!-- Headre -->
+    <header class="header">
+      <div class="top__nav">
+        <ul class="top__nav__list">
+          <li class="top__nav__item">
+            <a href="tel:1111111111" class="top__nav__link">1111111111</a>
+          </li>
+          <li class="top__nav__item">
+            <a href="mailto:info@zkmeppen.de" class="top__nav__link"
+              >info@zkmeppen.de</a
+            >
+          </li>
+          <li class="top__nav__item">
+            <a href="instagram.com" class="top__nav__link">Instagram</a>
+          </li>
+        </ul>
+      </div>
+      <nav class="nav" id="nav">
+        <div class="container">
+          <div class="logo">
+            <img src="imgs/logo.png" alt="Logo" class="logo__img" />
+          </div>
+          <div class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#" class="nav__link">Startseite</a>
+            </li>
+            <li class="nav__item">
+              <a
+                href="https://almarzouk.github.io/zkmeppen//verein.html"
+                class="nav__link"
+                >Der Verein</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="https://almarzouk.github.io/zkmeppen//spenden.html"
+                class="nav__link"
+                >Spenden</a
+              >
+            </li>
+            <li class="nav__item">
+              <a
+                href="https://almarzouk.github.io/zkmeppen//aktivtaeten.html"
+                class="nav__link"
+                >Aktivitäten</a
+              >
+            </li>
+            <li class="nav__item">
+              <a href="#kontakt" class="nav__link">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Hero -->
+    <section class="hero section-margin">
+      <div class="container">
+        <div class="left">
+          <h1 class="h-primary">
+            Gemeinschaft erleben – Unsere Veranstaltungen und Kurse
+          </h1>
+          <p class="p">
+            Unser Verein bietet eine Vielzahl von religiösen, kulturellen und
+            sozialen Veranstaltungen. Hier finden Sie die neuesten Aktivitäten.
+          </p>
+          <div class="buttons">
+            <a href="#" class="btn">Jetzt unterstützen</a>
+          </div>
+        </div>
+        <div class="right">
+          <img src="./imgs/hero-04.png" alt="" />
+        </div>
+      </div>
+    </section>
+    <div class="wochen section-padding">
+      <div class="container">
+        <h2 class="h-secondary green t-center mb-30">
+          Wöchentliche Aktivitäten
+        </h2>
+        <div class="cards flex gap-40 justify-center flex-wrap">
+          <div
+            class="card bg-green flex gap-40 align-center"
+            style="
+              background-color: #fce4b8;
+              border-radius: 15px;
+              max-width: 750px;
+              padding: 30px;
+              width: 100%;
+            "
+          >
+            <img src="./imgs/leistung-1.png" alt="" />
+            <div>
+              <h3 class="card-title gray-dark mb-20;">
+                Unterricht Aktivitäten
+              </h3>
+              <div class="unten flex align-center justify-center gap-20">
+                <img src="./imgs/calender.png" alt="" />
+                <p class="p">Jeden Sonntag, 10:00 Uhr</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card bg-green flex gap-40 align-center"
+            style="
+              background-color: #f2f2f2;
+              border-radius: 15px;
+              max-width: 750px;
+              padding: 30px;
+              width: 100%;
+            "
+          >
+            <img src="./imgs/leistung-2.png" alt="" />
+            <div>
+              <h3 class="card-title gray-dark mb-20;">Islamische Vorträge</h3>
+              <div class="unten flex align-center justify-center gap-20">
+                <img src="./imgs/calender.png" alt="" />
+                <p class="p">Jeden Sonntag, 10:00 Uhr</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card bg-green flex gap-40 align-center"
+            style="
+              background-color: #f7cfb9;
+              border-radius: 15px;
+              max-width: 750px;
+              padding: 30px;
+              width: 100%;
+            "
+          >
+            <img src="./imgs/leistung-3.png" alt="" />
+            <div>
+              <h3 class="card-title gray-dark mb-20;">Soziale Projekte</h3>
+              <div class="unten flex align-center justify-center gap-20">
+                <img src="./imgs/calender.png" alt="" />
+                <p class="p">Jeden Sonntag, 10:00 Uhr</p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card bg-green flex gap-40 align-center"
+            style="
+              background-color: #e0fbd1;
+              border-radius: 15px;
+              max-width: 750px;
+              padding: 30px;
+              width: 100%;
+            "
+          >
+            <img src="./imgs/leistung-4.png" alt="" />
+            <div>
+              <h3 class="card-title gray-dark mb-20;">Sport programme</h3>
+              <div class="unten flex align-center justify-center gap-20">
+                <img src="./imgs/calender.png" alt="" />
+                <p class="p">Jeden Sonntag, 10:00 Uhr</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="next section-padding">
+      <div class="container">
+        <div class="tabs">
+          <div class="tab active" data-tab="tab1">
+            <div class="calendar mr-10">
+              <img src="./imgs/calender.png" alt="" />
+            </div>
+            <span>20. März</span>
+          </div>
+
+          <div class="tab" data-tab="tab2">
+            <div class="calendar mr-10">
+              <img src="./imgs/calender.png" alt="" />
+            </div>
+            <span>30. März</span>
+          </div>
+
+          <div class="tab" data-tab="tab3">
+            <div class="calendar mr-10">
+              <img src="./imgs/calender.png" alt="" />
+            </div>
+            <span>05. April</span>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="tab-content active" id="tab1">
+            <span class="time">05:30 - 07:30</span>
+            <h2>Gemeinschaftliches Fastenbrechen (Iftar)</h2>
+            <p>
+              Das gemeinschaftliche Fastenbrechen (Iftar) ist eine wunderbare
+              Gelegenheit, zusammenzukommen, den Tag des Fastens zu beenden und
+              den spirituellen Geist des Ramadan zu erleben. In einer warmen und
+              einladenden Atmosphäre teilen wir Mahlzeiten, stärken unsere
+              Gemeinschaft und genießen die gemeinsame Zeit des Gebets und der
+              Besinnung.
+            </p>
+          </div>
+
+          <div class="tab-content" id="tab2">
+            <span class="time">05:45 - 07:45</span>
+            <h2>Gemeinschaftliches Fastenbrechen (Iftar)</h2>
+            <p>
+              Unser zweites gemeinschaftliches Fastenbrechen (Iftar) bietet
+              Ihnen die Möglichkeit, in gemütlicher Atmosphäre zusammenzukommen.
+              Genießen Sie köstliche Speisen und tauschen Sie sich mit anderen
+              Gemeindemitgliedern aus, während wir gemeinsam den Tag des Fastens
+              beenden und uns auf die kommenden Tage des Ramadan vorbereiten.
+            </p>
+          </div>
+
+          <div class="tab-content" id="tab3">
+            <span class="time">05:15 - 07:15</span>
+            <h2>Gemeinschaftliches Fastenbrechen (Iftar)</h2>
+            <p>
+              Zum Abschluss unserer Veranstaltungsreihe laden wir Sie herzlich
+              zu unserem dritten gemeinschaftlichen Fastenbrechen ein. Lassen
+              Sie uns gemeinsam den Tag des Fastens beenden und in fröhlicher
+              Runde die spirituelle Verbundenheit feiern. Für Speisen und
+              Getränke ist gesorgt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer section-padding">
+      <div class="container">
+        <ul class="footer__list">
+          <a href="#"><img src="./imgs/logo-footer.png" alt="" /></a>
+        </ul>
+        <ul class="footer__list">
+          <li><a href="#">Zusammenkunft der Kulturen in Meppen e.V.</a></li>
+          <li>
+            <a href="https://maps.app.goo.gl/Aga3c54rpsf8g1Q18" target="_blank"
+              >Riedemanstr. 12 <br />
+              49716 Meppen - Ems</a
+            >
+          </li>
+          <li><a href="mailto:zkmeppen@web.de">E-Mail: zkmeppen@web.de</a></li>
+          <li>
+            Ansprechpartner: <br />
+            Abicha Oubout
+            <a href="mailto:aouhbout@gmail.com">E-Mail: aouhbout@gmail.com</a>
+          </li>
+        </ul>
+        <ul class="footer__list">
+          <li>
+            <a href="/">Startseite</a>
+          </li>
+          <li>
+            <a href="/verein.html">Der Verein</a>
+          </li>
+          <li>
+            <a href="/spenden.html">Spenden</a>
+          </li>
+          <li>
+            <a href="aktivitaeten.html">Aktivitäten</a>
+          </li>
+          <li>
+            <a href="/#kontakt">Kontakt</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div class="min-footer">
+      <div class="container">
+        <ul>
+          <li>
+            <p>
+              © 2025 Zusammenkunft der Kulturen in Meppen e.V. | All Rights
+              Reserved
+            </p>
+          </li>
+          <div>
+            <li><a href="/impressum.html">impressum</a></li>
+            <li><a href="/datenschutz.html">datenschutz</a></li>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabs = document.querySelectorAll(".tab");
+
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            // Remove active class from all tabs and content
+            document
+              .querySelectorAll(".tab")
+              .forEach((t) => t.classList.remove("active"));
+            document
+              .querySelectorAll(".tab-content")
+              .forEach((c) => c.classList.remove("active"));
+
+            // Add active class to clicked tab
+            this.classList.add("active");
+
+            // Show corresponding content
+            const tabId = this.getAttribute("data-tab");
+            document.getElementById(tabId).classList.add("active");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
