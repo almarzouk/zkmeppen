@@ -510,9 +510,9 @@ body.no-scroll {
   font-weight: 400;
 }
 .nav__link.active {
-  color: #0f6c7d; /* اختر لونًا مميزًا */
-  font-weight: bold;
-  border-bottom: 2px solid #0f6c7d;
+  color: #0f6c7d !important; /* اختر لونًا مميزًا */
+  font-weight: bold !important;
+  border-bottom: 2px solid #0f6c7d !important;
 }
 /* Responsive Breakpoints - Mobile First */
 /* Small devices (landscape phones, 576px and up) */
