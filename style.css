@@ -111,7 +111,7 @@ body.no-scroll {
   pointer-events: auto;
 }
 .nav .nav__list .nav__link {
-  color: var(--primary-color);
+  color: #fff;
   font-size: 20px;
   transition: all 0.3s ease;
   font-weight: 400;
@@ -120,7 +120,7 @@ body.no-scroll {
 .nav .nav__list .nav__link::after {
   transition: all 0.3s ease;
   position: absolute;
-  background-color: var(--primary-color);
+  background-color: #fff;
   width: 0;
   height: 2px;
   content: "";
@@ -534,6 +534,12 @@ body.no-scroll {
   /* Show menu and Disable the Burger */
   .burger {
     display: none;
+  }
+  .nav .nav__list .nav__link {
+    color: var(--primary-color);
+  }
+  .nav .nav__list .nav__link::after {
+    background-color: #2c7a7b;
   }
   .nav .nav__list {
     position: relative;
