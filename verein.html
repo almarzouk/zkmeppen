@@ -449,5 +449,25 @@
       </div>
     </div>
     <script src="script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const tapsSection = document.querySelector(".taps");
+        const tapsContainer = document.querySelector(".taps-container");
+
+        function onScroll() {
+          const sectionTop = tapsSection.offsetTop;
+          const sectionBottom = sectionTop + tapsSection.offsetHeight;
+          const scrollY = window.scrollY + tapsContainer.offsetHeight;
+
+          if (scrollY >= sectionTop + 100 && scrollY < sectionBottom - 100) {
+            tapsContainer.classList.add("full-width");
+          } else {
+            tapsContainer.classList.remove("full-width");
+          }
+        }
+
+        window.addEventListener("scroll", onScroll);
+      });
+    </script>
   </body>
 </html>

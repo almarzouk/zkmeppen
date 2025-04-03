@@ -428,6 +428,19 @@ body.no-scroll {
   border-radius: 50px;
   margin: 0 auto;
   margin-bottom: 50px;
+  position: sticky;
+  top: 180px;
+  z-index: 1000;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.taps-container.full-width {
+  max-width: 100%;
+  padding-inline: 10vw; /* توزيع أجمل للتابات */
+  background-color: #e6e6e6; /* لون مغاير خفيف لجمالية الحركة */
+
+  transition: all 0.3s ease;
 }
 .taps-container .tap {
   color: var(--secondary-color);
